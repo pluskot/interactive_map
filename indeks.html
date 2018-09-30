@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Mapa stanowisk</title>
+        <style type="text/css">
+            #mapContainer {
+                border: 1px solid #ccc;
+                height: 650px;
+                position: relative;
+                width: 750px;
+            }
+
+            #mapContainer #mapFloorSelector {
+                margin-top: 10px;
+                text-align: center;
+            }
+
+            #mapContainer #mapControls {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            #mapContainer #map {
+                background-repeat: no-repeat;
+                display: inline-block;
+                height: 566px;
+                width: 680px;
+            }
+        </style>
+		<link href="css/map.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="mapContainer">
+            <div id="mapFloorSelector">
+            </div>
+            <div id="map"></div>
+            <div id="mapControls">
+                    <button id="revert" style="visibility:hidden;" onClick="revertSelection()">Revert selection</button>
+                    <button id="book" style="visibility:hidden;" onClick="bookSelected()">Book selected units</button>
+                    <button id="back" style="visibility:hidden;" onClick="backToMap()">Back to main view</button>
+                    <p id="log"></p>
+            </div>
+        </div>	  
+		<script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/raphael.js"></script>
+        <script src="js/raphael.pan-zoom.js"></script>
+        <script src="js/read.js"></script>
+        <script>
+            var images = [];
+            var image1 = {
+                path: "images/c13-parter.svg",
+                description: "Parter",
+            }
+            var image2 = {
+                path: "images/c13-pietro.svg",
+                description: "Pietro 1",
+            }
+            images.push(image1);
+            images.push(image2);
+            getContent();
+        </script>
+
+    </body>
+</html>
